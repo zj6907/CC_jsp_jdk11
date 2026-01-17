@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.domain.repository.mapper.bif.BranchMapper">
+
+  <select id="queryBranchInfos" parameterType="com.example.domain.model.bif.BranchQueryCond" resultType="com.example.domain.repository.entity.BranchInfoEntity">
+    SELECT 
+      "SYSTEMBANKCODE", 
+      "BANKCODE", 
+      "BRANCHCODE", 
+      "BRANCHNAME", 
+      "BRANCHNAMEKANJI",
+      "OPTBRANCHNAME1", 
+      "OPTBRANCHNAMEKANJI1", 
+      "OPTBRANCHNAME2", 
+      "OPTBRANCHNAMEKANJI2", 
+      "OPTBRANCHNAME3", 
+      "OPTBRANCHNAMEKANJI3", 
+      "OPTBRANCHNAME4",
+      "OPTBRANCHNAMEKANJI4", 
+      "OPTBRANCHNAME5", 
+      "OPTBRANCHNAMEKANJI5", 
+      "OPTBRANCHNAME6", 
+      "OPTBRANCHNAMEKANJI6", 
+      "OPTBRANCHNAME7", 
+      "OPTBRANCHNAMEKANJI7",
+      "OPTBRANCHNAME8", 
+      "OPTBRANCHNAMEKANJI8", 
+      "OPTBRANCHNAME9", 
+      "OPTBRANCHNAMEKANJI9", 
+      "COMMENT"
+    FROM 
+      cc."BRANCHINFO"
+    WHERE
+      "SYSTEMBANKCODE" = #{systemBankCode}
+      AND "BANKCODE" = #{bankCode}
+      <if test="action == 'ALL'">
+        AND "BRANCHCODE" &gt;= '0000'
+        AND "BRANCHCODE" &lt;= '9999'
+      </if>
+      <if test="action == 'SPECIFIC'">
+        AND "BRANCHCODE" = #{branchCode} 
+      </if>
+    LIMIT
+      #{limit};
+  </select>
+
+</mapper>

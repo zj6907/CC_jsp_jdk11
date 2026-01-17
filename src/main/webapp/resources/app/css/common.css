@@ -1,0 +1,24 @@
+label {
+  user-select: none;
+}
+
+.body-wrapping {
+  padding: 0 0.5rem;
+}
+
+.btn-common {
+  background-color: lightseagreen;
+  color: cornsilk;
+  height: 2rem;
+  padding: 0 .5rem;
+  border: none;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-rtn {
+  align-self: flex-start;
+  background-color: dimgrey;
+}
