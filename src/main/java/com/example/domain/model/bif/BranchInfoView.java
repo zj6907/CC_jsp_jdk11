@@ -1,8 +1,10 @@
 package com.example.domain.model.bif;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@NoArgsConstructor
 public class BranchInfoView {
 
 	private String systemBankCode;
