@@ -104,6 +104,25 @@
       <artifactId>spring-security-config</artifactId>
     </dependency>
 
+    <!-- Bean Validation API -->
+    <dependency>
+      <groupId>javax.validation</groupId>
+      <artifactId>validation-api</artifactId>
+    </dependency>
+
+    <!-- Hibernate Validator implementation -->
+    <dependency>
+      <groupId>org.hibernate.validator</groupId>
+      <artifactId>hibernate-validator</artifactId>
+    </dependency>
+
+    <!-- Expression Language (required for HV) -->
+    <!-- <dependency>
+      <groupId>org.glassfish</groupId>
+      <artifactId>javax.el</artifactId>
+      <version>3.0.1-b11</version>
+    </dependency> -->
+
     <!-- JSTL -->
     <dependency>
       <groupId>org.apache.taglibs</groupId>

@@ -24,13 +24,13 @@
   margin-left: 3rem;
 }
 
-.btn-shoukai {
+/* .btn-shoukai {
   display: block;
   margin: 0 auto;
   padding: 0 1.5rem;
   margin-top: 1rem;
   background-color: chocolate;
-}
+} */
 </style>
 
 <html>
@@ -50,7 +50,7 @@
         <!-- 全件検索 -->
         <div class="grid-container">
           <label for="bankCode1">金融機関コード</label>
-          <form:input path="bankCode1" />
+          <form:input path="bankCode1" cssErrorClass="input-error" />
           <button class="btn-common" type="submit" name="action" value="ALL">全件検索</button>
         </div>
 
@@ -59,11 +59,11 @@
         <!-- 指定検索 -->
         <div class="grid-container">
           <label for="bankCode2">金融機関コード</label>
-          <form:input path="bankCode2" />
+          <form:input path="bankCode2" cssErrorClass="input-error" />
           <button class="btn-common" type="submit" name="action" value="SPECIFIC">指定検索</button>
 
           <label for="branchCode">店舗コード</label>
-          <form:input path="branchCode" />
+          <form:input path="branchCode" cssErrorClass="input-error" />
         </div>
 
         <br>
@@ -74,8 +74,10 @@
           <input type="checkbox" id="trainingBank" name="trainingBank" style="margin-left: -1rem;" />
         </div>
 
-        <!-- Submit -->
-        <!-- <button class="btn-common btn-shoukai" type="submit">照会</button> -->
+
+        <div style="padding: 0 10px;">
+          <form:errors path="*" cssClass="error-message" />
+        </div>
 
       </div>
     </form:form>
