@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.example.domain.form.bif.BranchCondForm;
 import com.example.domain.service.bif.BranchCondService;
 
 @Controller
@@ -14,10 +15,11 @@ public class BranchCondController {
 
 	@Autowired
 	private BranchCondService service;
-	
+
 	@GetMapping
 	public String showPage(Model model) {
-		model.addAttribute("f", service.getForm());
+		BranchCondForm f = service.getForm();
+		model.addAttribute("f", f);
 		return "bif/branchCond";
 	}
 

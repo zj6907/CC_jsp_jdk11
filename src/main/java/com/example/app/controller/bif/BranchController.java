@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.domain.form.bif.BranchCondForm;
 import com.example.domain.model.bif.BranchInfoView;
+import com.example.domain.service.bif.BranchCondService;
 import com.example.domain.service.bif.BranchService;
 import com.example.domain.validator.bif.BranchCondFormValidator;
 
@@ -25,13 +26,22 @@ public class BranchController {
 
 	@Autowired
 	private BranchService service;
+	
+	@Autowired
+	private BranchCondService prevService;
 
 	@PostMapping
 	public String showPage(@ModelAttribute("f") BranchCondForm f, @RequestParam("action") String action, BindingResult br, Model model) {
+		// save form
+		prevService.saveForm(f);
+		
+		// validate
 		validator.validate(action, f, br);
 		if (br.hasErrors()) {
 			return "bif/branchCond";
 		}
+		
+		// query
 		List<BranchInfoView> list = service.execute(action, f);
 		model.addAttribute("list", list);
 		return "bif/branch";

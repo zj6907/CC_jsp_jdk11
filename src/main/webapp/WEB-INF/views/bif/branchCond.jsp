@@ -71,7 +71,7 @@
         <!-- 研修金庫指定 -->
         <div class="grid-container" style="border: none;">
           <label for="trainingBank">研修金庫指定</label>
-          <input type="checkbox" id="trainingBank" name="trainingBank" style="margin-left: -1rem;" />
+          <input type="checkbox" id="trainingBank" name="trainingBank" ${f.trainingBank ? "checked" : "" } style="margin-left: -1rem;" />
         </div>
 
 

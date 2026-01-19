@@ -21,4 +21,8 @@ public class BranchCondService {
 		return form;
 	}
 
+	public void saveForm(BranchCondForm f) {
+		sessObj.getObject().setForm(f);
+	}
+
 }
